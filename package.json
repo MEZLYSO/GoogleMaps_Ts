@@ -1,0 +1,22 @@
+{
+  "name": "googlemaps_ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "start": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@faker-js/faker": "^9.7.0",
+    "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "typescript": "^5.8.3"
+  }
+}
