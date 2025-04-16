@@ -1,4 +1,4 @@
-export class Person {
+export abstract class Person {
   protected readonly name: string;
   protected readonly location: {
     latitude: number;

@@ -1,4 +1,1 @@
-import { Passenger } from "./Passenger";
-
-const p = new Passenger();
-console.log(p);
+new google.maps.Map(document.getElementById("map")!);

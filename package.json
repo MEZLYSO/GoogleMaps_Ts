@@ -2,10 +2,9 @@
   "name": "googlemaps_ts",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
+    "start": "parcel build ./index.html && parcel serve index.html",
     "tsc": "tsc",
-    "start": "lite-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,9 +13,11 @@
   "type": "commonjs",
   "devDependencies": {
     "@faker-js/faker": "^9.7.0",
-    "lite-server": "^2.6.1"
+    "lite-server": "^2.6.1",
+    "parcel": "^2.14.4"
   },
   "dependencies": {
+    "@types/google.maps": "^3.58.1",
     "typescript": "^5.8.3"
   }
 }
