@@ -1,10 +1,12 @@
+import { Person } from "./Person";
 import { faker } from "@faker-js/faker";
 
-class Passenger {
-  name: string;
-  location: {
-    latitude: number;
-    longitude: number;
-  };
-  constructor(name: string, latitude: number, longitude: number) {}
+export class Passenger extends Person {
+  constructor() {
+    super(
+      faker.person.firstName(),
+      faker.location.latitude(),
+      faker.location.longitude(),
+    );
+  }
 }
