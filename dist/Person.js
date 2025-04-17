@@ -9,5 +9,8 @@ class Person {
             longitude,
         };
     }
+    getLocation() {
+        return this.location;
+    }
 }
 exports.Person = Person;

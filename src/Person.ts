@@ -11,4 +11,8 @@ export abstract class Person {
       longitude,
     };
   }
+
+  getLocation() {
+    return this.location;
+  }
 }
