@@ -1,6 +1,3 @@
-import { Driver } from "./Driver";
-import { Passenger } from "./Passenger";
-
 export class Map_ {
   private googleMap: google.maps.Map;
   constructor(div: string) {
@@ -13,24 +10,30 @@ export class Map_ {
     });
   }
 
-  //Solucion 1
-  AddPassengerMark(passenger: Passenger) {
-    new google.maps.Marker({
+  //Solucion 2
+  AddMark(mappable: Mappable) {
+    const infoWindow = new google.maps.InfoWindow({
+      content: "Hola",
+    });
+    const mark = new google.maps.Marker({
       map: this.googleMap,
       position: {
-        lat: passenger.getLocation().latitude,
-        lng: passenger.getLocation().longitude,
+        lat: mappable.getLocation().latitude,
+        lng: mappable.getLocation().longitude,
       },
+    });
+
+    mark.addListener("click", () => {
+      infoWindow.open(this.googleMap, mark);
     });
   }
 
-  AddDriverMark(driver: Driver) {
-    new google.maps.Marker({
-      map: this.googleMap,
-      position: {
-        lat: driver.getLocation().latitude,
-        lng: driver.getLocation().longitude,
-      },
-    });
-  }
+  // //Solucion 1
+  //     map: this.googleMap,
+  //     position: {
+  //       lat: driver.getLocation().latitude,
+  //       lng: driver.getLocation().longitude,
+  //     },
+  //   });
+  // }
 }

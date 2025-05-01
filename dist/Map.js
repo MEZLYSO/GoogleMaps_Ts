@@ -11,23 +11,20 @@ class Map_ {
             },
         });
     }
-    //Solucion 1
-    AddPassengerMark(passenger) {
-        new google.maps.Marker({
+    //Solucion 2
+    AddMark(mappable) {
+        const infoWindow = new google.maps.InfoWindow({
+            content: "Hola",
+        });
+        const mark = new google.maps.Marker({
             map: this.googleMap,
             position: {
-                lat: passenger.getLocation().latitude,
-                lng: passenger.getLocation().longitude,
+                lat: mappable.getLocation().latitude,
+                lng: mappable.getLocation().longitude,
             },
         });
-    }
-    AddDriverMark(driver) {
-        new google.maps.Marker({
-            map: this.googleMap,
-            position: {
-                lat: driver.getLocation().latitude,
-                lng: driver.getLocation().longitude,
-            },
+        mark.addListener("click", () => {
+            infoWindow.open(this.googleMap, mark);
         });
     }
 }
