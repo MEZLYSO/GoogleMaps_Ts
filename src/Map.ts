@@ -1,5 +1,8 @@
+import { MapGeoCoder } from "./MapGeoCoder";
+
 export class Map_ {
   private googleMap: google.maps.Map;
+  private geoCoder: MapGeoCoder;
   constructor(div: string) {
     this.googleMap = new google.maps.Map(document.getElementById(div)!, {
       zoom: 1,
@@ -8,6 +11,7 @@ export class Map_ {
         lng: 0,
       },
     });
+    this.geoCoder = new MapGeoCoder(this.googleMap);
   }
 
   //Solucion 2
@@ -23,11 +27,12 @@ export class Map_ {
       },
     });
 
-    mark.addListener("click", () => {
-      infoWindow.open(this.googleMap, mark);
-    });
+    this.geoCoder.AddMarkerInfo(mark, mappable);
   }
 
+  SerchText(options: SearchOptions): void {
+    this.geoCoder.searchText(options);
+  }
   // //Solucion 1
   //     map: this.googleMap,
   //     position: {

@@ -10,6 +10,10 @@ export class MyHome implements Mappable {
     return this.location;
   }
 
+  markerTitle(address: () => string): string {
+    return `La direccion de mi casa es ${address()}`;
+  }
+
   constructor(passenger: Person) {
     this.location = {
       latitude: passenger.getLocation().latitude + 0.002,

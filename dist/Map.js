@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Map_ = void 0;
+const MapGeoCoder_1 = require("./MapGeoCoder");
 class Map_ {
     constructor(div) {
         this.googleMap = new google.maps.Map(document.getElementById(div), {
@@ -10,6 +11,7 @@ class Map_ {
                 lng: 0,
             },
         });
+        this.geoCoder = new MapGeoCoder_1.MapGeoCoder(this.googleMap);
     }
     //Solucion 2
     AddMark(mappable) {
@@ -23,9 +25,10 @@ class Map_ {
                 lng: mappable.getLocation().longitude,
             },
         });
-        mark.addListener("click", () => {
-            infoWindow.open(this.googleMap, mark);
-        });
+        this.geoCoder.AddMarkerInfo(mark, mappable);
+    }
+    SerchText(options) {
+        this.geoCoder.searchText(options);
     }
 }
 exports.Map_ = Map_;

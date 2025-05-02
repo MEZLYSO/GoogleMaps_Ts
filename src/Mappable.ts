@@ -3,4 +3,6 @@ interface Mappable {
     latitude: number;
     longitude: number;
   };
+
+  markerTitle(address: () => string): string;
 }

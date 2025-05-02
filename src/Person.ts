@@ -9,6 +9,10 @@ export abstract class Person implements Mappable {
     return this.location;
   }
 
+  markerTitle(address: () => string): string {
+    return `La direccion de ${this.name} es ${address()}`;
+  }
+
   constructor(name: string, latitude: number, longitude: number) {
     this.name = name;
     this.location = {

@@ -5,6 +5,9 @@ class Person {
     getLocation() {
         return this.location;
     }
+    markerTitle(address) {
+        return `La direccion de ${this.name} es ${address()}`;
+    }
     constructor(name, latitude, longitude) {
         this.name = name;
         this.location = {

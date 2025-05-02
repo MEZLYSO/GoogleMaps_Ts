@@ -17,3 +17,7 @@ map.AddMark(driver);
 map.AddMark(passenger);
 map.AddMark(home);
 //Solucion 2 a agregar marcadores de google
+map.SerchText({
+    input: document.getElementById("address"),
+    searchButton: document.getElementById("searchBTN"),
+});

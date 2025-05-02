@@ -5,6 +5,9 @@ class MyHome {
     getLocation() {
         return this.location;
     }
+    markerTitle(address) {
+        return `La direccion de mi casa es ${address()}`;
+    }
     constructor(passenger) {
         this.location = {
             latitude: passenger.getLocation().latitude + 0.002,
